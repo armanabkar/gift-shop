@@ -1,21 +1,7 @@
 import Card from "./components/card";
+import GiftCards from "./data/gifts";
 
 export default function Home() {
-  const gifts = [
-    "steam",
-    "playstation",
-    "xbox",
-    "apple",
-    "nintendo",
-    "spotify",
-    "netflix",
-    "amazon",
-    "skype",
-    "blizzard",
-    "razer",
-  ];
-  const amounts = [5, 10, 15, 20, 30, 50, 70, 100];
-
   return (
     <>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left">
@@ -36,8 +22,8 @@ export default function Home() {
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        {gifts.map((gift, i) => (
-          <Card key={i} gift={gift} amounts={amounts} />
+        {GiftCards.map((gift) => (
+          <Card key={gift.id} gift={gift} />
         ))}
       </div>
     </>
