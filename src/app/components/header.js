@@ -2,10 +2,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useCartStore from "../store/useCartStore";
+import useAuth from "../store/useAuth";
 
 export default function Header() {
   const pathname = usePathname();
   const totalPrice = useCartStore((state) => state.totalPrice);
+  const username = useAuth((state) => state.name);
+  const isLogIn = useAuth((state) => state.isLogIn);
 
   return (
     <>
@@ -18,7 +21,11 @@ export default function Header() {
         </Link>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <p className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0 font-semibold">
-            <Link href={"/auth/register"}>Register</Link>
+            {isLogIn ? (
+              <span>{`Welcome, ${username}!`}</span>
+            ) : (
+              <Link href={"/auth/register"}>Register</Link>
+            )}
           </p>
         </div>
       </div>

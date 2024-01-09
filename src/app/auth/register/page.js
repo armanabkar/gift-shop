@@ -1,8 +1,20 @@
+"use client";
 import Button from "@/app/components/Button";
 import TextInput from "@/app/components/TextInput";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import useAuth from "@/app/store/useAuth";
 
 export default function Register() {
+  const router = useRouter();
+  let logIn = useAuth((state) => state.logIn);
+
+  const registerPressed = (e) => {
+    e.preventDefault();
+    logIn("Arman", "arman@mail.com");
+    router.push("/");
+  };
+
   return (
     <form className="max-w-sm mx-auto mb-20 sm:mb-36">
       <TextInput
@@ -23,13 +35,7 @@ export default function Register() {
         placeholder={""}
         type={"password"}
       />
-      {/* <Button label={"Register"} action={() => {}} /> */}
-      <button
-        type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        Register
-      </button>
+      <Button label={"Register"} action={registerPressed} />
       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <p className="text-center text-blue-800 font-semibold dark:text-blue-600">
         <Link href={"/auth/login"}>Already Have An Account?</Link>

@@ -1,8 +1,20 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Button from "@/app/components/Button";
 import Link from "next/link";
 import TextInput from "@/app/components/TextInput";
+import useAuth from "@/app/store/useAuth";
 
 export default function LogIn() {
+  const router = useRouter();
+  let logIn = useAuth((state) => state.logIn);
+
+  const logInPressed = (e) => {
+    e.preventDefault();
+    logIn("Arman", "arman@mail.com");
+    router.push("/");
+  };
+
   return (
     <form className="max-w-sm mx-auto mb-20 sm:mb-36">
       <TextInput
@@ -17,13 +29,7 @@ export default function LogIn() {
         placeholder={""}
         type={"password"}
       />
-      {/* <Button label={"Register"} action={() => {}} /> */}
-      <button
-        type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        Log In
-      </button>
+      <Button label={"Log In"} action={logInPressed} />
       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <p className="text-center text-blue-800 font-semibold dark:text-blue-600">
         <Link href={"/auth/register"}>{"Don't Have An Account Yet?"}</Link>

@@ -1,14 +1,17 @@
 export default function CartItems({ cartItems, removeItem }) {
   return (
-    <div className="grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+    <div className="grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-3">
       {cartItems.map((item, i) => (
         <p
-          className="rounded border-gray-300 bg-gray-100 dark:bg-neutral-800/30 dark:border-neutral-800 hover:bg-gray-300 hover:dark:bg-neutral-700 px-5 py-4 transition-colors text-left flex justify-between"
+          className="rounded bg-gray-300 dark:bg-neutral-800/30 p-3 transition-colors text-left flex justify-between"
           key={i}
         >
-          <span>{`${item.amount}$ ${item.name} Gift`}</span>
+          <span>
+            <span className="font-semibold">{`${item.amount}$ `}</span>
+            <span>{`${item.name} Gift`}</span>
+          </span>
           <button
-            className="text-rose-600 font-extrabold"
+            className="text-rose-400 font-extrabold hover:text-rose-500"
             onClick={() => removeItem(item)}
           >
             X
