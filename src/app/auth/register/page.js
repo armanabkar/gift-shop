@@ -36,7 +36,7 @@ export default function Register() {
         type={"password"}
       />
       <Button label={"Register"} action={registerPressed} />
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <p className="text-center text-blue-800 font-semibold dark:text-blue-600">
         <Link href={"/auth/login"}>Already Have An Account?</Link>
       </p>

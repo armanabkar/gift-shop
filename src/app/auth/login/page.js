@@ -30,7 +30,7 @@ export default function LogIn() {
         type={"password"}
       />
       <Button label={"Log In"} action={logInPressed} />
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <p className="text-center text-blue-800 font-semibold dark:text-blue-600">
         <Link href={"/auth/register"}>{"Don't Have An Account Yet?"}</Link>
       </p>

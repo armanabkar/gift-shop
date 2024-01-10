@@ -18,10 +18,6 @@ const useAuth = create((set) => ({
       email: "",
     }));
   },
-  resetCart: () => {
-    set({ cartItems: [] });
-    set({ totalPrice: 0 });
-  },
 }));
 
 export default useAuth;

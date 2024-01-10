@@ -36,6 +36,6 @@
  This project is a starting point, and there are many possibilities for further development. Some ideas include:
 
 - [ ] Adding more gift card platforms and retailers.
-- [ ] Implementing account management for saved preferences and purchase history.
+- [x] Implementing account management for saved preferences and purchase history (80%).
 - [ ] Integrating gift card delivery options (email, physical delivery).
 - [ ] Building a referral program for additional sales.
