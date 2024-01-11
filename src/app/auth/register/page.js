@@ -3,7 +3,8 @@ import Button from "@/app/components/Button";
 import TextInput from "@/app/components/TextInput";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import useAuth from "@/app/store/useAuth";
+import useAuth from "../../store/useAuth";
+import HorizontalLine from "@/app/components/horizontalLine";
 
 export default function Register() {
   const router = useRouter();
@@ -36,8 +37,8 @@ export default function Register() {
         type={"password"}
       />
       <Button label={"Register"} action={registerPressed} />
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-      <p className="text-center text-blue-800 font-semibold dark:text-blue-600">
+      <HorizontalLine />
+      <p className="text-blue-800 font-semibold dark:text-blue-600">
         <Link href={"/auth/login"}>Already Have An Account?</Link>
       </p>
     </form>

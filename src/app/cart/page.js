@@ -1,14 +1,14 @@
 "use client";
-import useCartStore from "../store/useCartStore";
-import CartItems from "../components/cartItems";
+import useCart from "../store/useCart";
 import Button from "../components/Button";
-import useAuth from "@/app/store/useAuth";
+import useAuth from "../store/useAuth";
 import Link from "next/link";
+import CartItems from "../components/cartItems";
 
 export default function Cart() {
-  let cartItems = useCartStore((state) => state.cartItems);
-  let resetCart = useCartStore((state) => state.resetCart);
-  let removeItem = useCartStore((state) => state.removeItem);
+  let cartItems = useCart((state) => state.cartItems);
+  let resetCart = useCart((state) => state.resetCart);
+  let removeItem = useCart((state) => state.removeItem);
   const isLogIn = useAuth((state) => state.isLogIn);
 
   return (
@@ -26,7 +26,7 @@ export default function Cart() {
           <Link href={"/auth/register"} className="underline">
             Register
           </Link>{" "}
-          of{" "}
+          or{" "}
           <Link href={"/auth/login"} className="underline">
             Log In
           </Link>

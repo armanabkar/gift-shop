@@ -2,8 +2,9 @@
 import Button from "@/app/components/Button";
 import Users from "@/app/data/users";
 import { useState, useEffect } from "react";
-import useAuth from "@/app/store/useAuth";
+import useAuth from "../..//store/useAuth";
 import { useRouter } from "next/navigation";
+import HorizontalLine from "@/app/components/horizontalLine";
 
 export default function Profile({ params }) {
   const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ export default function Profile({ params }) {
   return (
     <div className="text-center">
       <h1 className="text-2xl font-medium">{email}</h1>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <HorizontalLine />
       {previousPurchases.map((gift, i) => {
         return (
           <div key={i} className="p-3">
@@ -46,7 +47,7 @@ export default function Profile({ params }) {
           </div>
         );
       })}
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <HorizontalLine />
       <Button label={"Log Out"} action={logOutPressed} />
     </div>
   );

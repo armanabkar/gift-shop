@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import useCartStore from "../store/useCartStore";
+import useCart from "../store/useCart";
 
 export default function Card({ gift }) {
-  const addToCart = useCartStore((state) => state.addToCart);
+  const addToCart = useCart((state) => state.addToCart);
 
   return (
     <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">

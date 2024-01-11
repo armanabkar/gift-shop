@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const useCartStore = create((set, get) => ({
+const useCart = create((set, get) => ({
   cartItems: [],
   totalPrice: 0,
   addToCart: (gift, amount) => {
@@ -29,4 +29,4 @@ function generateUniqueID() {
   return `${timestamp}-${randomNumber}`;
 }
 
-export default useCartStore;
+export default useCart;

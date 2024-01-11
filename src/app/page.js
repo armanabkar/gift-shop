@@ -8,15 +8,15 @@ export default function Home() {
         <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
           <h1 className={`mb-3 text-2xl font-semibold`}>24/7 Support</h1>
           <p>
-            Our experts are by your side 24 hours a day and even during holidays
-            and will accompany you in case of any problem.
+            Our experts are always available to answer your questions and
+            resolve any issues that may arise.
           </p>
         </div>
         <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
           <h1 className={`mb-3 text-2xl font-semibold`}>Instant Delivery</h1>
           <p>
-            You can buy your gift card in less than 1 minute and receive the
-            code after payment.
+            Purchase your gift card in less than 1 minute and receive your code
+            immediately after payment.
           </p>
         </div>
       </div>

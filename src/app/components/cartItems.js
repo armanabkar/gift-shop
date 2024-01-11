@@ -3,7 +3,7 @@ export default function CartItems({ cartItems, removeItem }) {
     <div className="grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-3">
       {cartItems.map((item, i) => (
         <p
-          className="rounded bg-gray-300 dark:bg-neutral-800/30 p-3 transition-colors text-left flex justify-between"
+          className="rounded border border border-gray-300 p-3 dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 text-left flex justify-between"
           key={i}
         >
           <span>

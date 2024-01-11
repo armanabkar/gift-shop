@@ -1,31 +1,32 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import useCartStore from "../store/useCartStore";
+import useCart from "../store/useCart";
 import useAuth from "../store/useAuth";
 
 export default function Header() {
   const pathname = usePathname();
-  const totalPrice = useCartStore((state) => state.totalPrice);
+  const totalPrice = useCart((state) => state.totalPrice);
   const username = useAuth((state) => state.name);
   const isLogIn = useAuth((state) => state.isLogIn);
 
   return (
     <>
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+      <div className="z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex">
         <Link
-          className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:py-3 lg:px-4 lg:dark:bg-zinc-800/30 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           href={pathname == "/cart" ? "/" : "/cart"}
         >
           {pathname == "/cart" ? "← Back" : `TOTAL: ${totalPrice}$`}
         </Link>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <p className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0 font-semibold">
-            {isLogIn ? (
-              <Link
-                href="/profile/[id]"
-                as="/profile/301d9dbf"
-              >{`Welcome, ${username}!`}</Link>
+            {isLogIn && pathname == "/profile/301d9dbf" ? (
+              <Link href="/">GIFT SHOP</Link>
+            ) : isLogIn ? (
+              <Link href="/profile/[id]" as="/profile/301d9dbf">
+                {`Welcome, ${username}!`}
+              </Link>
             ) : (
               <Link href={"/auth/register"}>Register</Link>
             )}
