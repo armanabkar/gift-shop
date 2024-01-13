@@ -2,7 +2,7 @@
 import Button from "@/app/components/Button";
 import Users from "@/app/data/users";
 import { useState, useEffect } from "react";
-import useAuth from "../..//store/useAuth";
+import useAuth from "../../store/useAuth";
 import { useRouter } from "next/navigation";
 import HorizontalLine from "@/app/components/horizontalLine";
 

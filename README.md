@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./src/app/favicon.ico" width="150" height="150" />
+<img src="./app/favicon.ico" width="150" height="150" />
 <h1><strong>🎁 Gift Shop 🎁</strong></h1>
 </div>
 <br>
